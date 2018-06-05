@@ -24,9 +24,8 @@ class AddReceivableRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
+            'client' => 'required|string',
             'value' => 'required|numeric',
-            'expiration_date' => 'date',
         ];
     }
 }

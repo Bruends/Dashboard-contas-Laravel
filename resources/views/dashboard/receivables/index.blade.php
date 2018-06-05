@@ -11,7 +11,9 @@
 @section('content')
     <div class="box">
       <div class="box-header">
-      <a href="{{ route('receivables.add') }}" class="btn btn-success">
+      @include('includes.alerts')
+        
+      <a href="{{ route('receivables.addPage') }}" class="btn btn-success">
           Novo Recebimento &nbsp;
           <i class="fa fa-plus"></i>
       </a>
@@ -24,8 +26,8 @@
               <th>Cliente</th>
               <th>Valor R$</th>
               <th>Vencimento</th>
-              <th>inadimplência</th>
-              <th></th>
+              <th>Pago</th>
+              <th>inadimplênte</th>
             </tr>
           </thead>
           <tbody>
@@ -33,13 +35,13 @@
               <tr>
                 <td>{{ $receivable['id'] }}</td>
                 <td>{{ $receivable['client'] }}</td>
-                <td>{{ $receivable['value'] }}</td>
+                <td>{{ number_format($receivable['value'], 2) }}</td>
                 <td>{{ $receivable['expiration_date'] }}</td>              
                 <td>{{ $receivable['payed'] ? 'sim' : 'não' }}</td>
                 <td>{{ $receivable['non-payment'] ? 'sim' : 'não'  }}</td>              
                 <td>
-                  <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                  <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                <a href="{{ url('recebimentos/'.$receivable['id'].'/alterar') }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>&nbsp;
+                <a href="{{ url('recebimentos/'.$receivable['id'].'/deletar') }}" class="btn btn-danger"><i class="fa fa-trash"></i></a> 
                 </td>
               <tr>
             @endforeach
