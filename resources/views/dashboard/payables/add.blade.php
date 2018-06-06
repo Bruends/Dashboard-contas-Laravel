@@ -13,7 +13,7 @@
       <div class="box-header">
       @include('includes.alerts')
       <br>
-      <a href="{{ route('receivables') }}" class="btn btn-info">
+      <a href="{{ route('payables') }}" class="btn btn-info">
           voltar
           <i class="fa fa-arrow-left"></i>
       </a>
@@ -21,15 +21,15 @@
       <div class="box-body">
           <div class="box box-info">
               <div class="box-header with-border">
-                <h3 class="box-title">Cadastrar Novo Recebimento</h3>
+                <h3 class="box-title">Cadastrar Novo Pagamento</h3>
               </div>
               <div class="box-body">
-              <form action="{{ route('receivables.store') }}" method="POST" class="form">
+              <form action="{{ route('payables.store') }}" method="POST" class="form">
                 {{ csrf_field() }}
                   {{-- cliente --}}
                   <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-user"></i> Cliente *</span>
-                      <input class="form-control" name="client" placeholder="Nome do Cliente" type="text">
+                      <span class="input-group-addon"><i class="fa fa-bill"></i> Título *</span>
+                      <input class="form-control" name="title" placeholder="Título" type="text">
                     </div>
                     <br>
                     {{-- valor --}}

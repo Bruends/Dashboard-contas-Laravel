@@ -15,6 +15,10 @@ class CreatePayablesTable extends Migration
     {
         Schema::create('payables', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title', 100);
+            $table->double('value');
+            $table->date('expiration_date')->nullable();
+            $table->boolean('payed')->default(false);
             $table->timestamps();
         });
     }

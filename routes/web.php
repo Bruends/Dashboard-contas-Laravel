@@ -3,12 +3,22 @@
 
 // Dashboard
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/', 'DashboardController@index')->name('home');
+    Route::get('/', 'InfoController@index')->name('home');
 });
+
 
 // rotas de contas a pagar
 Route::group(['middleware' => 'auth', 'prefix' => 'pagamentos'], function() {
-    Route::get('/', 'PayableController@index')->name('payables');
+    Route::get('/', 'PayableController@index')->name('payables');    
+    // addicionar
+    Route::get('/novo', 'PayableController@addPage')->name('payables.addPage');
+    Route::post('/store', 'PayableController@store')->name('payables.store');
+    // deletar
+    Route::get('/{id}/deletar', 'PayableController@deletePage')->name('payables.deletePage');
+    Route::post('/deletar', 'PayableController@delete')->name('payables.delete');
+    // alterar
+    Route::get('/{id}/alterar', 'PayableController@updatePage')->name('payables.updatePage');
+    Route::post('/alterar', 'PayableController@update')->name('payables.update');
 });
 
 // rotas de contas a receber
