@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Cadastro Empresas',
+    'title' => 'Gerenciamento de contas',
 
     'title_prefix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => 'Painel ADM',
+    'logo' => 'Dashboard',
 
     'logo_mini' => '<i class="fa fa-dashboard"></i>',
 
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'green',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
 
     'login_url' => 'login',
 
-    'register_url' => 'register',
+    'register_url' => null,
 
     /*
     |--------------------------------------------------------------------------

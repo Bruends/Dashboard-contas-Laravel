@@ -10,8 +10,6 @@ class ReceivableController extends Controller
 {
     public function index(){
         $rec = Receivable::all();
-        
-    
         return view('dashboard.receivables.index', ['receivables' => $rec]);
     }
     
@@ -106,7 +104,6 @@ class ReceivableController extends Controller
         // em caso de falha
         return redirect()
                 ->back()
-                ->with('error', 'Erro ao alterar o recebimento !'); 
+                ->with('error', 'Erro ao alterar o recebimento !');
     }
-
 }

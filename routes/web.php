@@ -36,3 +36,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'recebimentos'], function() {
 });
 
 Auth::routes();
+
+Route::any('/register', function(){
+    return redirect('/login');
+});

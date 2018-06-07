@@ -4,10 +4,6 @@
 
 @section('title', 'Dashboard')
 
-@section('content_header')
-    <h1>Dashboard</h1>
-@stop
-
 @section('content')
     <div class="box">
       <div class="box-header">
@@ -35,7 +31,7 @@
                         <p>Data vencimento: {{ $payable['expiration_date'] }}</p>
                       </div>
                       <div class="icon">
-                        <i class="fa fa-user"></i>
+                        <i class="fa fa-trash"></i>
                       </div>
                       
                     </div>
