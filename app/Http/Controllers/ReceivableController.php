@@ -53,8 +53,9 @@ class ReceivableController extends Controller
     }
 
     public function delete(Request $request){ 
-        $receivable = Receivable::find($request->id)->get()->first();
-
+       $formData = $request->all();
+       $receivable = Receivable::find($formData['id']);
+       
         $response = $receivable->delete();
 
        if($response){

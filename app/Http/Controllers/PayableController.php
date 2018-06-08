@@ -42,7 +42,7 @@ class PayableController extends Controller
     }
 
     public function deletePage($id){ 
-        $payable = payable::find($id);
+        $payable = Payable::find($id);
 
         if(!$payable){
             // em caso de falha
@@ -55,9 +55,10 @@ class PayableController extends Controller
     }
 
     public function delete(Request $request){ 
-        $payable = payable::find($request->id)->get()->first();
-
-        $response = $payable->delete();
+       $formData = $request->all();
+       $payable = Payable::find($formData['id']);
+       
+       $response = $payable->delete();
 
        if($response){
             return redirect()

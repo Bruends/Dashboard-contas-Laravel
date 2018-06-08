@@ -131,13 +131,6 @@ return [
                 ]
             ]
         ],       
-
-        'Conta',        
-        [
-            'text' => 'Configurações',
-            'url'  => 'admin/settings',
-            'icon' => 'cog',
-        ],
     ],
 
     /*

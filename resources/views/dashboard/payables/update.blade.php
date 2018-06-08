@@ -25,7 +25,7 @@
                   {{-- cliente --}}
                   <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-user"></i> Cliente *</span>
-                  <input class="form-control" name="client" placeholder="Nome do Cliente" type="text" value="{{ $payable->title }}">
+                  <input class="form-control" name="title" placeholder="Nome do Cliente" type="text" value="{{ $payable->title }}">
                     </div>
                     <br>  
                     {{-- valor --}}
